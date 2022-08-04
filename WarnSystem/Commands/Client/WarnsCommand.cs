@@ -32,8 +32,8 @@ namespace WarnSystem.Commands.Client
         /// <summary>
         /// Gets or sets the format to use when listing the warns of players.
         /// </summary>
-        [Description("The format to use when listing the warns of players. Available placeholders: {0}:Date, {1}:IssuerName, {2}:IssuerId, {3}:Reason")]
-        public string WarnListFormat { get; set; } = "[{0}] | {1} ({2}) > {3}";
+        [Description("The format to use when listing the warns of players. Available placeholders: {0}:Id, {1}:Date, {2}:IssuerName, {3}:IssuerId, {4}:Reason")]
+        public string WarnListFormat { get; set; } = "{0}: [{1}] | {2} ({3}) > {4}";
 
         /// <summary>
         /// Gets or sets the date format.
@@ -51,7 +51,7 @@ namespace WarnSystem.Commands.Client
         /// Gets or sets the response to send to the user when a match has been found.
         /// </summary>
         [Description("The response to send to the user when a match has been found. Available placeholders: {0}:WarnList, {1}:WarnCount")]
-        public string MatchesResponse { get; set; } = "{0}\n{1} warns on record.";
+        public string MatchesResponse { get; set; } = "\n{0}\n{1} warns on record.";
 
         /// <inheritdoc />
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
